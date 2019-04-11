@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.BitcoinTrackingActivity">
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:indeterminateTint="@color/lb_default_brand_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bitcoin_chart_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/lb_default_brand_color"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bitcoin_chart_description"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bitcoin_chart_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lb_default_brand_color"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bitcoin_chart_title"
+            app:layout_constraintBottom_toTopOf="@id/spark_view"/>
+
+    <com.robinhood.spark.SparkView
+            android:id="@+id/spark_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:spark_scrubEnabled="true"
+            android:layout_margin="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bitcoin_chart_description"
+            app:layout_constraintBottom_toTopOf="@id/bitcoin_price_data_cta"
+            app:spark_lineColor="@color/colorPrimary"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bitcoin_chart_scrub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
+            android:text="@string/scrub_empty"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spark_view"
+            app:layout_constraintBottom_toTopOf="@id/bitcoin_price_data_cta"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bitcoin_price_data_cta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_data"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_margin="16dp"
+            android:textColor="@color/lb_action_text_color"
+            android:background="@color/button_blue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bitcoin_chart_scrub"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

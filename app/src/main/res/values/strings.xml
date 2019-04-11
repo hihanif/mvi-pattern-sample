@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bitcoin Stats</string>
+    <string name="get_data">Bitcoin Price</string>
+    <string name="scrub_format">Bitcoin price: $%1$s</string>
+    <string name="scrub_empty">Tap and hold the graph to view Bitcoin price.</string>
+    <string name="ok_button">OK</string>
+    <string name="alert_title">Loading Failed</string>
+    <string name="alert_message">Failed to load data</string>
+</resources>
